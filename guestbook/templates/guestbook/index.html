@@ -1,0 +1,28 @@
+{% extends 'guestbook/base.html' %}
+
+    {% block content %}
+
+      <div class="container theme-showcase" role="main">
+
+      <div class="jumbotron">
+        <h1>Guest Book</h1>
+        <a type="button" class="btn btn-link" href="{% url 'sign' %}">Sign the Guest Book</a>
+      </div>
+
+      {% for post in posts %}
+
+        <div class="page-header">
+          <h1>{{ post.name }}</h1>
+        </div>
+        <div class="well">
+          <p>{{ post.comment }}</p>
+        </div>
+
+      {% endfor %}
+      
+
+    </div> <!-- /container -->
+
+    {% endblock content %}
+
+  
